@@ -17,7 +17,7 @@ class ImageController extends Controller
             $firebaseStorage = app('firebase.storage');
 
             // Faça upload da imagem para o Firebase Storage
-            $imagePath = 'caminho/para/salvar/'.$nomeArquivo;
+            $imagePath = 'fotos/'.$nomeArquivo;
             $firebaseStorage->getBucket()->upload(
                 fopen($imagem->getRealPath(), 'r'),
                 ['name' => $imagePath]
