@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ComandoController;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +27,11 @@ Route::put('/atualizar-dispositivo/{id}', [DispositivoController::class, 'update
 Route::get('/delete-dispositivo/{id}', [DispositivoController::class, 'deleteDispositivo']);
 
 Route::post('/img', [ImageController::class, 'salvarImagem']);
+
+//rotas de comando
+Route::get('/deviceInfo', [ComandoController::class, 'deviceInfo']);
+Route::get('/takepicBack', [ComandoController::class, 'takepicBack']);
+Route::get('/takepicFront', [ComandoController::class, 'takepicFront']);
+Route::get('/getIP', [ComandoController::class, 'getIP']);
+Route::get('/getLocation', [ComandoController::class, 'getLocation']);
+Route::get('/teste', [ComandoController::class, 'teste']);
