@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\DispositivoController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\LoginController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,3 +36,7 @@ Route::get('/takepicFront', [ComandoController::class, 'takepicFront']);
 Route::get('/getIP', [ComandoController::class, 'getIP']);
 Route::get('/getLocation', [ComandoController::class, 'getLocation']);
 Route::get('/teste', [ComandoController::class, 'teste']);
+
+//login
+Route::view('/login', 'login')->name('login');
+Route::post('/auth', [LoginController::class, 'auth'])->name('login.form');
