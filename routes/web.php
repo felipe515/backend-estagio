@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ComandoController;
-use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
@@ -38,5 +37,5 @@ Route::get('/getLocation', [ComandoController::class, 'getLocation']);
 Route::get('/teste', [ComandoController::class, 'teste']);
 
 //login
-Route::view('/login', 'login')->name('login');
-Route::post('/auth', [LoginController::class, 'auth'])->name('login.form');
+Route::view('/login', 'login.form')->name('login.form');
+Route::post('/auth', [LoginController::class, 'auth'])->name('login.auth');

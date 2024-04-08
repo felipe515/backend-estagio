@@ -30,7 +30,7 @@
             <input type="text" placeholder="Digite seu Email..." name="email">
             <br> <br>       
         <label for="">Senha</label>
-        <input type="text" placeholder="Digite sua Senha..." name="senha">
+        <input type="text" placeholder="Digite sua Senha..." name="password">
         <br> <br>
         <button class="waves-effect waves-light btn">Enviar Cadastro</button>
     </form>

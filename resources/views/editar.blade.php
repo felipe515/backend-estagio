@@ -19,7 +19,7 @@
         <input type="text" placeholder="Digite seu email..." name="email" value="{{$usuario->email}}">
         <br> <br>
         <label for="">Senha</label>
-        <input type="text" placeholder="Digite sua Senha..." name="senha" value="{{$usuario->senha}}">
+        <input type="text" placeholder="Digite sua Senha..." name="password" value="{{$usuario->password}}">
         <br> <br>
         <button>Enviar Cadastro</button>
     </form>

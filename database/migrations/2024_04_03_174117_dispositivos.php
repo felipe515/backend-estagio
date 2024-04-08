@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('nome');
             $table->string('ip');
 
-            $table->unsignedBigInteger('id_usuarios');
-            $table->foreign('id_usuarios')->references('id')->on('usuarios')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('id_user');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

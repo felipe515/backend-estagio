@@ -1,3 +1,13 @@
+@if($mensagem = Session::get('erro'))
+{{$mensagem}}
+@endif
+
+@if ($errors->any())
+    @foreach ($errors->all() as $error)
+    {{$error}} <br>
+    @endforeach
+@endif
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,21 +23,18 @@
 <body>
 
 
-    @if($mensagem = Session::get('erro'))
-        {{$mensagem}}
-    @endif
+
 
 
     <form class="row container" action="{{ route('login.auth')}}" method="POST">
         @csrf
-        <div class="">
-
-            <label for="">Nome</label>
-            <input type="text" placeholder="Digite seu nome..." name="name">
-        </div>   
-
+        
             <label for="">Email</label>
-            <input type="text" placeholder="Digite seu Email..." name="email">
+            <input type="text" placeholder="Digite seu Email..." name="email"> 
+        
+        
+        <label for="">Senha</label>
+        <input type="password" placeholder="Digite sua senha..." name="password">
             <br> <br>       
         <button class="waves-effect waves-light btn">Entrar</button>
     </form>
