@@ -12,5 +12,15 @@ class Dispositivo extends Model
     protected $fillable = [
         'nome',
         'ip',
+        'id_user'
     ];
+
+   /// public function user(){
+   //     return $this->belongsTo(User::class, 'id_user');
+   // }
+
+  /*  public function user(){
+        return $this->hasMany(User::class, 'id_user', 'id');
+    }
+    */
 }

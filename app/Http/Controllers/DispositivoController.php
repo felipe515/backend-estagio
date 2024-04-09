@@ -8,17 +8,25 @@ use Illuminate\Support\Facades\Auth;
 
 class DispositivoController extends Controller{
 
-    function create(Request $informacoes){
-        Dispositivo::create([
-            'id_user' => Auth::id(),
-            'nome' => $informacoes->nome,
-            'ip' => $informacoes->ip,
-            
-        ]);
-        echo "dispositivo Cadastrado com sucesso";
-        return view('img');
+function create(Request $informacoes){
+    $userId = auth()->user()->id;
+
+    $contDispositivo = Dispositivo::where('id_user', $userId)->count();
+
+    if($contDispositivo >= 3){
+        echo "Não foi possivel  Você ja tem 3 dispositivo cadastrado!";
+        return view('dispositivo');
     }
 
+    Dispositivo::create([
+        'id_user' => $userId,
+        'nome' => $informacoes->nome,
+        'ip' => $informacoes->ip,
+    ]);
+
+    echo "Dispositivo cadastrado com sucesso";
+    return view('img');
+}
 
 
     function getDispositivo($id){

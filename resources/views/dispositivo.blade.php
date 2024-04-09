@@ -17,6 +17,9 @@
 
     <form action="/cadastrar-dispositivo" method="POST">
         @csrf
+
+        
+        <h1>id: {{ auth()->user()->id }}</h1>
         <label for="">Nome</label>
         <input type="text" placeholder="Digite o nome do dispositivo..." name="nome">
         <br> <br>
