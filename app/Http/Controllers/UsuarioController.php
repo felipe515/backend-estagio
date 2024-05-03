@@ -16,7 +16,7 @@ class UsuarioController extends Controller{
             'password' => $informacoes->password
         ]);
         echo "Usuario Cadastrado com sucesso";
-        return view('dispositivo');
+        return view('login.form');
     }
 
     function getUser($id){
