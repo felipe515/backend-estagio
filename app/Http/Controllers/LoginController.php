@@ -22,9 +22,9 @@ class LoginController extends Controller
 
         if(Auth::attempt($credenciais)){
             $request->session()->regenerate();
-            return 1;
+            return true;
         }else{
-            return 0;
+            return false;
         }
 
     }
