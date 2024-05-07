@@ -9,7 +9,7 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login.form');
 });
 
 //rota de usuarios
@@ -39,3 +39,8 @@ Route::get('/teste', [ComandoController::class, 'teste']);
 //login
 Route::view('/login', 'login.form')->name('login.form');
 Route::post('/auth', [LoginController::class, 'auth'])->name('login.auth');
+
+/*rotas que Eduardo vai mandar a requisição
+
+localhost:8000/auth - enviar um post com as informações de login. O Auth vai fazer o processo de autenticação. 
+*/

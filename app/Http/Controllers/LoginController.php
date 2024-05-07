@@ -22,9 +22,9 @@ class LoginController extends Controller
 
         if(Auth::attempt($credenciais)){
             $request->session()->regenerate();
-            return view('dispositivo');
+            return 1;
         }else{
-            return redirect()->back()->with('erro', 'Email ou senha invalida!');
+            return 0;
         }
 
     }
